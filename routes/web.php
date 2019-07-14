@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
+    dd('hi there');
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/signup', 'HomeController@index')->name('home')->middleware('guest');
